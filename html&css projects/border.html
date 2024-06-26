@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/ddb0f9592c.js" crossorigin="anonymous"></script>
+        <style>
+           header{
+            background-color: rgb(3, 3, 74);
+            display: flex;
+            color: white;
+            height: 60px;
+           
+           }
+           ul{
+            list-style: none;
+            display: flex;
+           
+           }
+           li{
+            padding-left: 30px;
+           }
+           footer
+           {
+            background-color: rgb(4, 4, 168);
+            height: 90px;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+           }
+           legend
+           {
+            background-color: green;
+            color: white;
+            height: 25px;
+            padding-left: 20px;
+            padding-top: 1%;
+            width: 80px;
+            margin-left: 10%;
+           }
+           fieldset
+           {
+            
+            border: 10px solid rgb(252, 215, 5);
+            border-top-right-radius: 90px;
+            border-bottom-left-radius: 90px;
+            border-top-color: rgb(174, 149, 6);
+            border-left-color:rgb(174, 149, 6); 
+           
+           }
+           button{
+            background-color: green;
+            color: white;
+            width: 80px;
+            height: 25px;
+            border: 0;
+           }
+           td{
+               padding-bottom: 5%;
+               text-align: center;
+              
+           }
+           label{
+            text-align: center;
+           }
+           form{
+            margin: 5% 30% 10% 35% ;
+           }
+           div{
+            margin:15% 5% 5% 15% ;
+
+           }
+           input[type="text"]
+           {
+            margin-left: 20%;
+           }
+           .mahi {
+                width: 100%;
+               
+                margin-top: 20px;
+                display: none;
+            }
+            .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             }
+          
+           
+          
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><i class="fa-solid fa-house-chimney"></i> Home</li>
+                <li> <i class="fa-solid fa-lock"></i> Login</li>
+                <li><i class="fa-solid fa-user-plus"></i> Register</li>
+                <li><i class="fa-solid fa-screwdriver-wrench"></i> Our Services</li>
+                <li><i class="fa-solid fa-location-dot"></i> Contact Us</li>
+            </ul>
+        </header>
+        <form name="myform">
+            <fieldset>
+               <legend> <i class="fa-solid fa-lock"></i> <b> Login</b></legend>
+               <div>
+               <table>
+                <tr>
+                    <td>
+                        <label><b>e-Mail</b></label>
+                    </td>
+                    <td>
+                        <input type="text" name="email">
+                    </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label><b>Password</b></label>
+                    </td>
+                    <td>
+                    <input type="text" name="password">
+                  </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" onclick="myfunction()"><b>Login </b> <i class="fa-solid fa-arrow-right"></i></button>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+            </fieldset>
+        </form>
+         
+
+        <footer>
+            cybotrix Technologies <br>
+            <i class="fa-brands fa-facebook" ></i>
+            <i class="fa-brands fa-twitter" style="padding-left: 20px; padding-top: 30px;"></i>
+            <i class="fa-brands fa-linkedin" style="padding-left: 20px; padding-top: 30px;"></i>
+            <i class="fa-brands fa-google" style="padding-left: 20px; padding-top: 30px;"></i>
+      
+        </footer>
+        <table id="tableData" class="mahi"><thead style="text-align: center;"><th >User Id</th><th>ID</th> <th>Title</th><th>Body</th></thead><tbody id="tableBody"></tbody></table>
+        <script>
+            async function myfunction()
+            {
+                let x = document.forms["myform"]["email"].value;
+                let y = document.forms["myform"]["password"].value;
+                let table = document.getElementById("tableData");
+                let tableBody = document.querySelector("#tableBody");
+                table.style.display = "block";
+
+    let values = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments' );
+     let newValue = await values.json();
+     console.log(newValue);
+     
+      for(let i=0; i<newValue.length;i++)
+       {
+      
+         let row = `<tr><td>${newValue[i].userId}</td><td>${newValue[i].id}</td><td>${newValue[i].title}</td><td>${newValue[i].body}</td></tr>`;
+        tableBody.innerHTML += row;
+       }
+          
+    }
+                
+    
+        
+        </script>
+    </body>
+</html>

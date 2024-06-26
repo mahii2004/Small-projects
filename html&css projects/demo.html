@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>user Demo</title>
+        <style>
+            body
+            {
+                background-color:rgba(223, 225, 227, 0.956);
+            }
+            div{
+              
+                margin-top:30px ;
+                padding-left: 15px;
+            }
+            input
+            {
+                height: 30px;
+                margin-bottom: 15px;
+            }
+            p,b{
+                color: gray;
+                padding-bottom: 10px;
+                padding-left: 40px;
+                font-size: 20px;
+                margin-top: 7px;
+            }
+            select{
+                margin-top: 5px;
+                margin-left: 15px;
+                height: 25px;
+                width: 60px;
+                border: 1px solid black;
+            }
+
+            button
+            {
+                background-color: rgb(7, 7, 131);
+                color: white;
+                text-align: center;
+                width: 35%;
+                height: 30px;
+                border: 0;
+            }
+            .mahi {
+                width: 100%;
+                
+                margin-top: 20px;
+                display: none;
+            }
+            .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             }
+          
+           
+         </style>
+    </head>
+    <body>
+        <div>
+        <h1 style="margin-bottom: 0;">User Registration Form Demo</h1>
+        <p><b>Form Validated Using jquery</b></p>
+        <form name="myform">
+        <input type="text" placeholder="First Name" size="25" name="fname">
+        <input type="text" placeholder="Laste Name" size="25" name="lname">
+        <br>
+        <input type="text" placeholder="Your Email" size="56" name="mail">
+        <br>
+        <input type="text" placeholder="Re-enter Email" size="56" name="re-mail">
+        <br>
+        <input type="text" placeholder="New Password" size="56" name="password">
+        <br>
+        <b style="padding-left: 0; font-size: 15px;">Birthday</b>
+        <br>
+        <select style="margin-left: 2px;" class="date"><option>Month</option><option>january</option></select>
+        <select class="date"><option>Day</option><option>monday</option></select>
+        <select class="date"><option>Year</option><option>2024</option></select><br>
+        <input type="radio" style="margin-bottom: 0;" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="Male">Male <br>
+        <button type="button" onclick="myfunction()"> Sign Up</button>
+        </div>
+     </form>
+      <table id="tableData" class="mahi">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>e-mail</th>
+            <th>confirm e-mail</th>
+            <th>password</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      
+      </table>
+        <script>
+                   
+      function myfunction()
+      {
+        let x = document.forms["myform"]["fname"].value;
+        let m = document.forms["myform"]["lname"].value;
+        let n = document.forms["myform"]["mail"].value;
+        let l = document.forms["myform"]["re-mail"].value;
+        let h = document.forms["myform"]["password"].value;
+        let u = document.getElementsByClassName("date")[0].value;
+        let r = document.getElementsByClassName("date")[1].value;
+        let e = document.getElementsByClassName("date")[2].value;
+        let date = u + "/" + r + "/" + e ;
+        let k= document.getElementsByName('gender');
+        let table= document.getElementById("tableData");
+                table.style.display="block";
+        let tableBody = document.getElementById("tableBody");
+        let mail=""
+       if(n!=l)
+          {
+            mail = "<b> enter correct email</b>";
+          }
+          else
+          {
+           mail = "<b> confirmed </b>";
+           
+          }
+          let gender = "";
+           for (i = 0; i < k.length; i++) 
+            {
+                if (k[i].checked)
+                {
+                    gender = k[i].value;
+                }
+                
+            }
+
+            let row = `<tr><td>${x}</td><td>${m}</td><td>${n}</td><td>${mail}</td><td>${h}</td><td>${date}</td><td>${gender}</td></tr>`;
+             tableBody.innerHTML += row;
+      }
+     
+        </script>
+    </body>
+</html>

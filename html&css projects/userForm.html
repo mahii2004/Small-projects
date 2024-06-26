@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <style>
+         div,h1{
+            text-align: center;
+         }
+         div{
+           width: 40%;
+           height: 90%;
+            background-color: skyblue;
+            margin-left: 30%;
+            padding-top: 10px;
+         }
+         textarea
+         {
+            width: 170%;
+            height: 100px;
+         }
+         td{
+            text-align: center;
+            padding-bottom: 4%;
+            
+         }
+         input[type="text"]
+         {
+            width: 130%;
+            border: 0;
+            height: 25px;
+            margin-left: 5%;
+         }
+         textarea
+         {
+            margin-left: 5%;
+            border: 0;
+         }
+         select
+         {
+            border: 0;
+            padding-left: 0;
+         }
+         form{
+            padding-left: 2%;
+         }
+         .color{
+            background-color: red;
+            margin-top: 0;
+         }
+         button{
+           margin-top: 2%;
+          padding-bottom: 0;
+         }
+        .m {
+            margin-left: 10px;
+         }
+         input[type="checkbox"],.bold
+         {
+            float: left;
+         }
+        </style>
+    </head>
+    <body>
+        <h1> User Form One </h1>
+        <div>
+          <form>
+            <table>
+                <tr>
+                    <td><b>Full Name</b></td>
+                    <td><input type="text" placeholder="Enter your Name" ></td>
+                </tr>
+                <tr>
+                    <td><b>Email Id</b></td>
+                    <td><input type="text" placeholder="Enter your Email Id"></td>
+                </tr>
+                <tr>
+                    <td><b>Password</b></td>
+                    <td><input type="text" placeholder="Enter your New Password"></td>
+                </tr>
+                <tr>
+                    <td><b>Mobile No</b></td>
+                    <td><input type="text" placeholder="Enter your New Mobile No"></td>
+                </tr>
+                <tr>
+                    <td><b>Gender</b></td>
+                    <td><input type="radio" > <b>Male</b> <input type="radio"><b>Female</b> </td>
+                </tr>
+                <tr>
+                    <td><b>DOB</b></td>
+                    <td><input type="text" placeholder="DOB as dd-mm-yyyy"></td>
+                </tr>
+                <tr>
+                    <td><b>City</b></td>
+                    <td><select style="width: 60%;"><option>choose city</option> </select></td>
+                </tr>
+                <tr>
+                    <td><b>Address</b></td>
+                    <td>
+                        <textarea placeholder="Enter Your Full Address" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Pincode</b></td>
+                    <td><input type="text" placeholder="Enter pincode"></td>
+                </tr>
+                <tr>
+                    <td><b>Resume Upload</b></td>
+                    <td>
+                        <button class="m">Browse..</button> No file selected.
+                    </td>
+                </tr>
+               
+            </table>
+            <input type="checkbox"><b class="bold">I agree with terms and conditions</b><br> 
+                  
+            <button> Register</button>
+            <button> Clear Form</button>
+            </form>
+            
+            <hr class="color">
+            <a href="#" style="font-style: italic; padding-left: 0;"><b>I have account</b></a>
+        </div>
+    </body>
+</html>

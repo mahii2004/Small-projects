@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+    <style>
+        div {
+            text-align: center;
+            background-color: #a1f8fd;
+            text-decoration-color: black;
+            margin-left: 30%;
+            margin-right: 30%;
+            padding-top: 2%;
+        }
+
+        p {
+            margin-left: 30%;
+            margin-right: 30%;
+            padding-top: 2%;
+        }
+
+        .mahi {
+                width: 100%;
+               
+                margin-top: 20px;
+                display: none;
+            }
+            .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             }
+    </style>
+</head>
+<body>
+<div>
+    <form name="myform">
+        <label>Your Name</label><br>
+        <input type="text" style="height: 40px;" maxlength="20" name="fname"><br><br><br>
+
+        <label>Your Gender</label><br>
+        <input type="radio" value="male" name="gender"> Male <br>
+        <input type="radio" value="female" name="gender"> Female <br><br>
+
+        <label>Your E-mail</label><br>
+        <input type="text" style="height: 40px;" name="mail"><br><br><br>
+
+        <label>Your Comments</label><br>
+        <textarea style="height: 60px;" name="comment"></textarea><br><br><br>
+
+        <button type="button" style="height: 40px;margin-bottom: 10%;" onclick="myFunction()">Submit</button>
+        <button type="reset" style="height: 40px;margin-bottom: 10%;">Clear</button>
+    </form>
+</div>
+
+<table id="dataTable" class="mahi" > 
+    <thead>
+        <th>Your Name</th>
+        <th>your Gender</th>
+        <th>your Email</th>
+        <th>your comments</th>
+    </thead>
+    <tbody id="tableBody">
+
+    </tbody>
+</table>
+
+<script>
+    function myFunction() {
+        let x = document.getElementsByName("fname")[0].value;
+        let m = document.getElementsByName("mail")[0].value;
+        let n = document.getElementsByName("comment")[0].value;
+        let k = document.getElementsByName('gender');
+        let table = document.getElementById("dataTable");
+        let tableBody =  document.querySelector("#tableBody");
+        table.style.display="block";
+        let gender = "";
+      for (let i = 0; i < k.length; i++) {
+            if (k[i].checked) {
+               gender = k[i].value;
+            }
+        }
+
+        
+        
+        let row = `<tr><td>${x}</td><td>${gender}</td><td>${m}</td><td>${n}</td></tr>`;
+       
+
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                x: x,
+                gender: gender,
+                m: m,
+                n: n
+                
+            })
+      })
+        .then(response => response.json())
+        .then(data =>  tableBody.innerHTML += row)
+        .catch(error => console.error('Error:', error));
+          
+    }
+      
+    
+    
+</script>
+</body>
+</html>

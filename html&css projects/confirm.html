@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <style>
+           body
+           {
+          text-align: center;
+           }
+           form{
+            padding-left: 35%;
+           }
+           td{
+            
+                text-align: right;
+             }
+             
+             .mahi {
+                width: 100%;
+              
+                margin-top: 20px;
+                display: none;
+            }
+           .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             } 
+          
+          
+        </style>
+    </head>
+    <body>
+        <h2>Registration Form</h2>
+        <form name="myform">
+           <table>
+                <tr>
+                    <td >Username</td>
+                    <td><input type="text" name="uname"></td>
+                </tr>
+                <tr>
+                    <td >Password</td>
+                    <td><input type="text" name="password"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="text" name="cpassword"></td>
+                </tr>
+                <tr>
+                    <td >Firstname</td>
+                    <td><input type="text" name="fname"></td>
+                </tr>
+                <tr>
+                    <td >Lastname</td>
+                    <td><input type="text" name="lname"></td>
+                </tr>
+                <tr>
+                    <td >Email</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td >Phone Number</td>
+                    <td><input type="text" name="phone"></td>
+                </tr>
+                <tr>
+                    <td >Location</td>
+                    <td><input type="text" name="location"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" onclick="myfunction()">Save</button>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <table id="tableData" class="mahi">
+            <thead>
+            <th>username</th>
+            <th>password</th>
+            <th>confirm password</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>e-mail</th>
+            <th>phone numner</th>
+            <th>location</th>
+        </thead>
+            <tbody id="tableBody">
+            
+            </tbody>
+        </table>
+        <script>
+            function myfunction()
+            {
+                let table = document.getElementById("tableData");
+                table.style.display= "block";
+                let tableBody = document.getElementById("tableBody");
+                let x = document.forms["myform"]["uname"].value;
+                let y = document.forms["myform"]["password"].value;
+                let z = document.forms["myform"]["cpassword"].value;
+                let t = document.forms["myform"]["fname"].value;
+                let m = document.forms["myform"]["lname"].value;
+                let k = document.forms["myform"]["email"].value;
+                let j = document.forms["myform"]["phone"].value;
+                let l = document.forms["myform"]["location"].value;
+                let confirm = ""
+                if(y!=z)
+                {
+                    confirm = "<b>please enter correct password!</b>";
+                }
+                else
+                {
+                    
+                    confirm = "<b> Yes </b>";
+                }
+
+                let row = `<tr><td>${x}</td><td>${y}</td><td>${confirm}</td><td>${t}</td><td>${m}</td><td>${m}</td><td>${j}</td><td>${l}</td</tr>`;
+                    tableBody.innerHTML += row;
+                
+        }
+      
+        </script>
+    </body>
+</html>

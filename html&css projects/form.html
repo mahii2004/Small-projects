@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Registration form</title>
+   <style>
+    body
+    {
+        padding-right: 23%;
+        padding-left: 30%;
+        
+    }
+    b{
+        color: rgba(253, 71, 10, 0.951);
+        font-style: italic;
+    }
+    .mahi {
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+    .mahi th,.mahi td 
+    {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid burlywood;       
+
+    }
+   </style>
+</head>
+<body>
+    <form name="myform">
+        <fieldset style="border: 4px solid black;">
+            <legend><h2>Form Validation</h2>  </legend>
+       <table>
+        <tr>
+        <td>
+        <label>Name: </label>
+        </td> 
+        <td>
+        <input type="text" id="name" name="name" maxlength="20">
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <label >Username: </label>
+            </td>
+          
+            <td>
+                <input type="text" id="username" name="username" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td><label >Password: </label></td>
+            <td> <input type="password" id="password" name="password" maxlength="10"></td>
+        </tr>
+       <tr>
+           <td> <label >Re-type Password: </label></td>
+           <td> <input type="password" id="re-password" name="re-password" maxlength="10"></td>
+        </tr>
+       <tr>
+        <td> <label>Gender:</label></td>
+        <td><input type="radio" name="gender" value="Male">Male 
+            <input type="radio" name="gender" value="Female">Female 
+            <input type="radio" name="gender" value="other">other</td>
+      </tr>
+      <tr>
+        <td> <legend >Programming skills:</legend></td>
+        <td> <input type="checkbox" name="check" value="java">Java 
+            <input type="checkbox"  name="check" value="Andriod">Android 
+            <input type="checkbox"  name="check" value="Ruby">Ruby
+            <input type="checkbox"  name="check" value=".Net">.Net</td>
+      </tr>
+      <tr>
+        <td> <label >Contact no: </label></td>
+        <td> <input type="number" name="contact"><b> Contact no. must be of 10 digits</b></td>
+     </tr>
+     <tr>
+        <td> <label >Email: </label></td>
+        <td> <input type="email" name="email"><b style="padding-left: 20%;">Enter a valid email</b> </td>
+     </tr>
+        <tr>
+            <td> <label >College: </label></td>
+            <td>
+                <select name="college" id="college ">
+                    <option>SVIT</option>
+                    <option>Svcet</option>
+                    <option>SGS </option>
+                </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" onclick="mahi()"> submit</button>
+            </td>
+       </tr>
+    </table> 
+    </fieldset>
+    </form>
+   <table id="tableData" class="mahi">
+    <thead>
+        <th>Name</th>
+        <th>username</th>
+        <th>password</th>
+        <th>confirm possword</th>
+        <th>Gender</th>
+        <th>Programming skills</th>
+        <th>contact no.</th>
+        <th>e-mail</th>
+        <th>college</th>
+    </thead>
+    <tbody id="tableBody"></tbody>
+   </table>
+    
+
+    <script>
+        function mahi()
+        {
+
+            let table= document.getElementById("tableData");
+                table.style.display="block";
+              let tableBody = document.getElementById("tableBody");
+          let name = document.forms["myform"]["name"].value;
+          let userName = document.forms["myform"]["username"].value;
+          let password = document.forms["myform"]["password"].value;
+          let confirm = document.forms["myform"]["re-password"].value;
+          let gender = document.getElementsByName("gender");
+          let check = document.getElementsByName("check");
+          let contact = document.forms["myform"]["contact"].value;
+          let email = document.forms["myform"]["email"].value;
+          let college = document.forms["myform"]["college"].value;
+         let m = "" ;
+          if(password == confirm)
+          {
+             m = "<b> YES</b>";
+          }
+          else
+          {
+           m = "<b> NO </b>";
+          } 
+         let g = "";
+          for(let i=0;i<gender.length;i++)
+          {
+            if(gender[i].checked)
+          {
+            
+                g = gender[i].value;
+          }
+          }
+         
+
+         let skills = "";
+        for (let i = 0; i < check.length; i++) {
+            if (check[i].checked) {
+                skills += check[i].value + ", ";
+            }
+        }
+        let row = `<tr><td>${name}</td><td>${userName}</td><td>${password}</td><td>${m}</td><td>${g}</td><td>${skills}</td><td>${contact}</td><td>${email}</td><td>${college}</td></tr>`;
+        tableBody.innerHTML += row;
+
+        }
+    </script>
+</body>
+</html>

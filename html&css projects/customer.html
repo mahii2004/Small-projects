@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Customer</title>
+        <style>
+            div
+            {
+                margin-bottom: 25%;
+                margin-left: 30%;
+                margin-right: 35%;
+                border: 1px solid black;
+                padding-left: 5%;
+                padding-right: 20%;
+            }
+            button{
+                margin-top: 15%;
+            }
+            b{
+                color: red;
+            }
+            .mahi {
+                width: 100%;
+                
+                margin-top: 20px;
+                display: none;
+            }
+            .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             }
+           
+        </style> 
+    </head>
+    <body>
+        <div>
+        <form name="myform">
+            <fieldset>
+                <legend><h4>Customer</h4></legend>
+                <table>
+                    <tr><td>Name<b>*</b></td><td><input type="text" size="15" required name="fname"></td></tr>
+                    <tr><td>Email<b>*</b></td><td><input type="email" required name="email"></td></tr>
+                    <tr><td>Investment</td><td><select style="width: 70%;" name="invest" ><option>20000</option><option>40000</option></select></td></tr>
+                    <tr><td style="width: 50%;">Date Joined<b>*</b></td> <td><input type="datetime-local" style="width: 60%;" required name="date"></td></tr>
+                    <tr><td>Active</td><td><input type="checkbox" name="check"></td></tr>
+                </table>
+            </fieldset>
+            <button type="button" onclick="myfunction()">OK</button>
+            <button type="reset" style="margin-left: 2%;">Cancel</button>
+        </form>
+      </div>
+      <table id="tableData" class="mahi" >
+      <thead>
+       <th>Name</th>
+       <th>Email</th>
+       <th>Investment</th>
+       <th>Date Joined</th>
+       <th>Active</th>
+      </thead>
+      <tbody id="tableBody"></tbody>
+      </table>
+        <script>
+           function myfunction()
+            {
+                let table= document.getElementById("tableData");
+                table.style.display="block";
+                let tableBody = document.getElementById("tableBody");
+                let x = document.forms["myform"]["fname"].value;
+                let y = document.forms["myform"]["email"].value;
+                let z = document.forms["myform"]["invest"].value;
+                let t = document.forms["myform"]["date"].value;
+                let f = document.forms["myform"]["check"];
+                let active = "";
+            if(f.checked )
+                    {
+                        active= "<b> YES </b>";
+                       
+                    }
+                    else{
+                      active = "<b> NO </b>";
+                    }
+            
+            let row = `<tr><td>${x}</td><td>${y}</td><td>${z}</td><td>${t}</td><td>${active}</td></tr>`;
+            tableBody.innerHTML += row; 
+            }
+        </script>
+
+    </body>
+</html>

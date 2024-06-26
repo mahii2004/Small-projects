@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            padding-left: 37%;
+        }
+
+        button {
+            height: 30px;
+            width: 50%;
+            background-color: green;
+            color: white;
+            border: 0;
+        }
+
+        input[type="text"] {
+            height: 25px;
+            border: 0;
+        }
+
+        td {
+            padding-bottom: 5%;
+            color: gray;
+            text-align: center;
+        }
+
+        .mahi {
+            width: 100%;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .mahi th, .mahi td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid burlywood;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(196, 238, 238);">
+<h2>Registration Form</h2>
+<form name="myform">
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" size="25" name="fname"></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" size="25" name="lname"></td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" size="25" name="username"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" size="25" name="password"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" size="25" name="email"></td>
+        </tr>
+        <tr>
+            <td>Mobile Number:</td>
+            <td><input type="text" size="25" name="mobile"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>City: <select name="city"><option>select</option></select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="button" onclick="mahi()">Register</button>
+                <a href="#">Back to Home</a>
+            </td>
+        </tr>
+    </table>
+</form>
+<table id="tableData" class="mahi">
+    <thead>
+       <th>First Name</th>
+       <th>Last Name</th>
+       <th>Username</th>
+       <th>password</th>
+       <th>e-mail</th>
+       <th>Mobile Number</th>
+       <th>City</th>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+<script>
+    function mahi() {
+        let fname = document.forms["myform"]["fname"].value;
+        let lname = document.forms["myform"]["lname"].value;
+        let userName = document.forms["myform"]["username"].value;
+        let password = document.forms["myform"]["password"].value;
+        let email = document.forms["myform"]["email"].value;
+        let mobile = document.forms["myform"]["mobile"].value;
+        let city = document.forms["myform"]["city"].value;
+
+        let table = document.getElementById("tableData");
+
+        table.style.display = "block";
+         let tableBody=document.getElementById("tableBody");
+         let row = `<tr><td>${fname}</td><td>${lname}</td><td>${userName}</td><td>${password}</td><td>${email}</td><td>${mobile}</td><td>${city}</td></tr>`;
+        tableBody.innerHTML += row;
+    }
+</script>
+</body>
+</html>

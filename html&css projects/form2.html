@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <style>
+            header{
+            background-color: rgb(2, 2, 167);
+            margin-top: 2%;
+            color: white;
+            width: 100%;
+            height: 25px;
+            }
+            ul{
+                padding-top: 5px;
+            }
+            li{
+                display: inline;
+                padding-left: 10%;
+             }
+             footer{
+                background-color: rgb(110, 20, 20);
+                width: 100%;
+                height: 15%;
+             }
+             h1{
+                text-align: center;
+             }
+             form{
+                padding-left: 35%;
+                padding-bottom: 3%;
+             }
+             input[type="text"]
+             {
+                width: 130%;
+                height: 30px;
+               
+                border-color: skyblue;
+             }
+             textarea
+             {
+                width: 150%;
+                height: 50px;
+                border-color: skyblue; 
+             }
+             button{
+                margin-left: 50%; 
+                border-color: rgb(7, 147, 202);
+                border-radius: 3px;
+             }
+
+             .mahi {
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+    .mahi th,.mahi td 
+    {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid burlywood;       
+
+    }
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li>Form1</li>
+                <li>Form2</li>
+                <li>Form3</li>
+                <li>Form4</li>
+                <li>Form5</li>
+          
+            </ul>
+        </header>
+        <h1>Registration Form</h1>
+        <form>
+         <table>
+            <tr>
+                <td>Id:</td>
+                <td><input type="text" id="id"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+                <td><input type="text" name="course"></td>
+            </tr>
+            <tr>
+                <td>Branch:</td>
+                <td><input type="text" id="branch"></td>
+            </tr>
+            <tr>
+                <td>Rollno:</td>
+                <td><input type="text" id="rollno"></td>
+            </tr>
+            <tr>
+                <td>Email_Address:</td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td>User_Name:</td>
+                <td><input type="text" id="userName"></td>
+            </tr>
+            <tr>
+                <td>About Us:</td>
+                <td>
+                    <textarea id="about"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" id="password"></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="mahi()" >Add</button></td>
+                <td></td>
+            </tr>
+            
+         </table>
+        </form>
+        <footer></footer>
+
+
+        <table class="table" id="tableData">
+            <thead>
+                <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>Branch</th>
+              <th>Rollno</th>
+              <th>Email_Address</th>
+              <th>User_Name</th>
+              <th>About Us</th>
+              <th>password</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        
+    </body>
+</html>

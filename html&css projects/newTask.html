@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>New Account</title>
+        <style>
+            form{
+                padding-left: 35%;
+                padding-right: 30%;
+                padding-top: 2%;
+            }
+            input
+            {
+                margin-left: 5%;
+            }
+            .mahi {
+            width: 100%;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .mahi th, .mahi td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid burlywood;
+        }
+           
+        </style>
+       
+    </head>
+
+    <body >
+        <form>
+            <table>
+                <tr>
+                    <td><label style="padding-left: 17%;" >First Name<b style="color: red;">*</b></label></td>
+                    <td><input type="text" required id="fname"></td>
+                </tr>
+                <tr>
+                    <td><label style="padding-left: 25%;">Last Name</label></td>
+                    <td><input type="text" id="lname"></td>
+                </tr>
+                <tr>
+                    <td><label >Phone Number</label></td>
+                    <td><input type="number" id="phone" ></td>
+                </tr>
+                <tr>
+                    <td><label style="padding-left: 30%;">Date Time</label></td>
+                    <td><input type="datetime-local" id="datetime" ></td>
+                </tr>
+                <tr>
+                    <td><label style="padding-left: 70%;">City</label></td>
+                    <td>
+                        <select style="width: 90%; margin-left: 5%;" id="city">
+                            <option>TPHCM</option>
+                            <option>Nellore</option>
+                        </select>
+                       
+                    </td>
+                </tr>
+            </table>
+            <hr >
+            <button type="button" onclick="mahi()">complete task</button>
+            <button type="reset">Reset form</button>
+        </form>
+        <table class="mahi" id="tableData">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>phone Number</th>
+                <th>date and time</th>
+                <th>city</th>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+            <script>
+                function mahi()
+                {
+                    let fname = document.getElementById("fname").value;
+                    let lname = document.getElementById("lname").value;
+                    let phone = document.getElementById("phone").value;
+                    let date = document.getElementById("datetime").value;
+                    let city = document.getElementById("city").value;
+                    let table = document.getElementById("tableData");
+                    let tableBody = document.getElementById("tableBody");
+                    table.style.display = "block";
+
+                    let row = `<tr><td>${fname}</td><td>${lname}</td><td>${phone}</td><td>${date}</td><td>${city}</td></tr>`;
+                    tableBody.innerHTML += row; 
+                }
+            </script>
+
+       
+    </body>
+</html>

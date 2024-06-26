@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,intial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: rgb(2, 2, 125);
+        margin-top: 2%;
+        color: white;
+        width: 100%;
+        height: 25px;
+      }
+      ul {
+        padding-top: 5px;
+      }
+      li {
+        display: inline;
+        padding-left: 10%;
+      }
+      footer {
+        background-color: rgb(137, 29, 29);
+        width: 100%;
+        height: 15%;
+      }
+      input,
+      select {
+        margin-left: 50%;
+      }
+      form {
+        margin: 10% 10% 13% 30%;
+      }
+      button {
+        border: 1px solid black;
+        box-shadow: yellow;
+      }
+
+      .mahi {
+        width: 100%;
+        margin-top: 20px;
+        display: none;
+      }
+      .mahi th,
+      .mahi td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li>Form1</li>
+        <li>Form2</li>
+        <li>Form3</li>
+        <li>Form4</li>
+        <li>Form5</li>
+      </ul>
+    </header>
+    <form>
+      <table>
+        <tr>
+          <td>Full Name:</td>
+          <td>
+            <input type="text" id="fname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Username:</td>
+          <td>
+            <input type="text" id="UserName" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input type="password" id="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Re Password:</td>
+          <td>
+            <input type="password" id="re-password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>
+            <input type="text" id="Address" />
+          </td>
+        </tr>
+        <tr>
+          <td>Age:</td>
+          <td>
+            <input type="text" id="age" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <select id="gender">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="mahi()">Save</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <footer></footer>
+
+    <table class="mahi" id="tableData">
+      <thead>
+        <th>Full Name</th>
+        <th>UserName</th>
+        <th>password</th>
+        <th>confirm password</th>
+        <th>Address</th>
+        <th>Age</th>
+        <th>Gender</th>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+      function mahi() {
+        let name = document.getElementById("fname").value;
+        let UserName = document.getElementById("UserName").value;
+        let password = document.getElementById("password").value;
+        let confirm = document.getElementById("re-password").value;
+        let address = document.getElementById("Address").value;
+        let age = document.getElementById("age").value;
+        let gender = document.getElementById("gender").value;
+        let table = document.getElementById("tableData");
+        let tableBody = document.getElementById("tableBody");
+        table.style.display = "block";
+        let c = "";
+        if (password == confirm) {
+          c = "<b>YES</b>";
+        } else {
+          c = "<b>NO</b>";
+        }
+        let row = `<tr><td>${name}</td><td>${UserName}</td><td>${password}</td><td>${c}</td><td>${address}</td><td>${age}</td><td>${gender}</td></tr>`;
+        tableBody.innerHTML += row;
+      }
+    </script>
+  </body>
+</html>

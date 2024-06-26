@@ -1,0 +1,194 @@
+<html>
+    <head>
+        <style>
+          header{
+            background-color: rgb(3, 3, 105);
+            color: white;
+            width: 55%;
+            height: 25px;
+            text-align: center;
+            padding-top: 5px;
+            margin-left:25%;
+          }
+          sup{
+            font-size: 8px;
+          }
+          div{
+            background-color: rgb(223, 238, 245);
+            width: 55%;
+            height:150% ;
+            margin-left: 25%;
+        }
+        p{
+            margin-top: 0;
+            padding-top: 1%;
+            padding-left: 25%;
+        }
+        td{
+            padding-bottom: 2%;
+        }
+        form{
+            padding-left: 10%;
+        }
+        input[type="text"],select
+        {
+            margin-left: 50px;
+        }
+        .key{
+            background-color: skyblue;
+          width: 100%;
+            height: 5px;
+            margin-bottom: 3px;
+             
+        }
+        .color
+        {
+            background-color: yellow;
+            color: black;
+            border: 0;
+            height: 25px;
+            margin-left: 15%;
+        }
+        .mahi {
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+            .mahi th,.mahi td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid burlywood;
+
+             }
+        
+        </style>
+    </head>
+    <body>
+        <header>Digi-Access<sup >TM</sup> Certificate Request</header>
+        <div>
+            <p><b>For an individual Digi-Access<sup >TM</sup> Certificate,complete the following form</b></p> 
+         <form name="myform">
+        
+         <table>
+            <tr>
+                <td><label>Full Name</label></td>
+                <td> <input type="text" size="30" name="fname"></td>
+            </tr>
+            <tr>
+                <td><label>Email Address</label></td>
+                <td> <input type="text" size="30" name="email"></td>
+            </tr>
+            <tr>
+                <td><label>Organisation</label></td>
+                <td> <input type="text" size="30" name="Organ"></td>
+            </tr>
+            <tr>
+                <td><label>Organisational unit</label></td>
+                <td> <input type="text" size="30" name="Ounit"></td>
+            </tr>
+            <tr>
+                <td><label>locality/City</label></td>
+                <td> <input type="text" size="30" name="city"></td>
+            </tr>
+            <tr>
+                <td><label>Country</label></td>
+                <td> <select style="width: 80%;"name="country"></select></td>
+            </tr>
+           
+            <tr>
+                <td><label>Telephone</label></td>
+                <td> <input type="text" size="30" name="phone"></td>
+            </tr>
+            <tr>
+                <td><label>Username</label></td>
+                <td> <input type="text" size="30" name="Uname"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td> <input type="text" size="30" name="password"></td>
+            </tr>
+            <tr>
+                <td><label>Personal identification <br> Number [P.I.N.]</label></td>
+                <td> <input type="text" size="30" name="PIN"></td>
+            </tr>
+            <tr>
+                <td><label>Date Of Birth</label></td>
+                <td> 
+                    <select style="width: 20%;" class="DOB"></select>
+                    <select style="width: 20%; margin-left: 10px ;"  class="DOB"></select>
+                    <select style="width: 20%; margin-left: 10px;" class="DOB"></select> 
+                </td>
+            </tr>
+            <tr>
+                <td><label> I require access to my <br>online banking form</label></td>
+                <td>  <select style="width: 70%;" name="access"><option>yes</option><option>No</option></select></td>
+            </tr>
+            <tr>
+                <td class="key" colspan="2">
+                    <b>Private Key Options</b>
+                </td>
+                <td></td>
+                
+            </tr>
+            <tr style="margin-top: 5%;">
+                <td><label>Key size:</label></td>
+                <td> <select style="width: 60%;" name="key"></select></td>
+            </tr>
+            <tr style="margin-top: 5%;">
+               <td></td>
+               <td>
+                <button type="button" class="color" onclick="myFunction()"> Enroll Now </button>
+               </td>
+            </tr>
+         </table>
+        </form>
+        </div>
+        <table id="tableData" class="mahi">
+            <thead>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Organisation</th>
+                <th>Organisation unit</th>
+                <th>city</th>
+                <th>country</th>
+                <th>phone number</th>
+                <th>Username</th>
+                <th>possword</th>
+                <th>PIN</th>
+                <th>DOB</th>
+                <th>access</th>
+                <th>key</th>
+            </thead>
+            <tbody id="tableBody"></tbody>
+            
+        </table>
+        <script>
+              function myFunction()
+            {
+                let x = document.forms["myform"]["fname"].value;
+                let y = document.forms["myform"]["email"].value;
+                let z = document.forms["myform"]["Organ"].value;
+                let t = document.forms["myform"]["Ounit"].value;
+                let m = document.forms["myform"]["city"].value;
+                let k = document.forms["myform"]["country"].value;
+                let j = document.forms["myform"]["phone"].value;
+                let u = document.forms["myform"]["Uname"].value;
+                let e = document.forms["myform"]["password"].value;
+                let l = document.forms["myform"]["PIN"].value;
+                let q = document.getElementsByClassName("DOB")[0].value;
+                let b = document.getElementsByClassName("DOB")[1].value;
+                let a = document.getElementsByClassName("DOB")[2].value;
+                let DOB = q+"/" + b + "/" + a;
+                let access = document.forms["myform"]["access"].value;
+                let key = document.forms["myform"]["key"].value;
+
+                let table= document.getElementById("tableData");
+                table.style.display="block";
+                let tableBody = document.getElementById("tableBody");
+               let row = `<tr><td>${x}</td><td>${y}</td><td>${z}</td><td>${t}</td><td>${m}</td><td>${k}</td><td>${j}<td>${u}</td><td>${e}</td><td>${l}</td><td>${DOB}</td><td>${access}</td><td>${key}</td></tr>`;
+               tableBody.innerHTML += row;
+              
+            }
+        </script>
+    </body>
+</html>

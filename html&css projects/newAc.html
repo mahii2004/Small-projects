@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title> new Account </title>
+        <style>
+            body
+            {
+                background-color:hsl(18, 100%, 50%);
+                padding: 5%;
+                text-decoration-color:white ;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-align: center;
+                padding-left: 30%;
+                padding-right: 30%;
+            }
+    
+    input{
+        padding-left: 20%;
+        height: 30px;
+        margin-bottom: 5%;
+    }
+button
+{
+    text-decoration-color:hsl(18, 100%, 50%) ;
+    height: 30px;
+    border: 0px;
+   
+    width:150px ;
+        
+}
+
+.mahi {
+            width: 100%;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .mahi th, .mahi td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid burlywood;
+        }
+        
+
+        </style>
+    </head>
+    <body>
+        <hr>
+        <br>
+        <form action="newAc.html" >
+            <table style="color: white;">
+                <tr><td><h3> Create Your Account </h3></td></tr>
+               <div>
+                <tr >
+                    <td><label style="padding-left: 50%; margin-bottom: 50%;">Enter Name :</label></td>
+                    <td><input type="text" id="name" placeholder="Enter user here" itemid="name"> </td>
+                </tr>
+               </div>
+                <tr>
+                    <td><label for="email"  style="padding-left: 40%; margin-bottom: 50%;">Enter Email ID :</label></td>
+                    <td><input type="text" placeholder="Enter Email ID here" id="email"></td>
+
+                </tr>
+                <tr>
+                    <td><label for="username"  style="padding-left: 34%; margin-bottom: 70%;">Enter Username :</label></td>
+                    <td><input type="text" placeholder="Enter Username here" id="userName"></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="password"  style="padding-left: 37%; margin-bottom: 70%;">Enter Password :</label></td>
+                    <td><input type="password" placeholder="Enter Password here" id="password"></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="con-password" style="padding-left: 7%;">Enter Confirm Password :</label></td>
+                    <td><input type="password" placeholder="Enter password here" id="cpassword"></td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button style="color: darkorange; "  type="reset" ><b>clear form</b></button>
+                        <button style="color: darkorange;" type="button" onclick="mahi()" ><b>create Account</b></button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <hr>
+
+        <table class="mahi" id="tableData">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>username</th>
+                <th>password</th>
+                <th>Confirm password</th>
+
+            </thead>
+            <tbody id="tableBody"></tbody>
+          
+        </table>
+        <script>
+            function mahi()
+            {
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let userName = document.getElementById("userName").value;
+                let password = document.getElementById("password").value;
+                let confirm = document.getElementById("cpassword").value;
+                let table = document.getElementById("tableData");
+                let c = "";
+                if(confirm == password)
+                {
+                    c = "<b> Yes </b>";
+                }
+                else{
+                    c= "<b> no </b>";
+                }
+                table.style.display ="block";
+                let tableBody = document.getElementById("tableBody");
+                let row = `<tr><td>${name}</td><td>${email}</td><td>${userName}</td><td>${password}</td><td>${c}</td></tr>`;
+                tableBody.innerHTML += row;
+            }
+        </script>
+    </body>
+</html>

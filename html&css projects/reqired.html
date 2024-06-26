@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <style>
+            table,tr,td{
+                border: 1px solid black;
+                border-collapse: collapse;
+               
+            }
+         table
+          {
+            height: 70%;
+            width: 35%;
+            background-color: skyblue;
+            margin-left: 30%;
+        }
+        .center
+          {
+            text-align: center;
+          }
+          button{
+           border: 1px solid black;
+           border-radius: 3px;
+          }
+         h1{
+            margin-top: 0;
+            margin-bottom: 0;
+            
+         }
+          h4{
+            color: red;
+            margin-top: 0;
+            margin-bottom: 0;
+           
+           
+          }
+         
+          
+          input[type="text"]
+          {
+            border: 0.5px solid black;
+            border-radius: 3px;
+          }
+          
+          
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+              <tr class="center">
+                <th colspan="2">
+                    <h1>User Registration</h1><br>
+                     <h4>*Required feilds</h4>
+                </th>
+              </tr>
+              <tr>
+                <td><b>First Name* </b><br> <input type="text"></td>
+                <td><b>Last Name*</b> <br> <input type="text"></td>
+              </tr>
+              <tr>
+                <td><b>Email* </b><br> <input type="text" size="25"></td>
+                <td><b>Zip Code* </b><br> <input type="text" size="5"></td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Username*</b><br><input type="text"></td>
+              </tr>
+              <tr>
+                <td><b>Password*</b> <br> <input type="text" size="5"></td>
+                <td><b>Confirm Password*</b> <br> <input type="text" size="5"></td>
+              </tr>
+              <tr >
+                <td colspan="2">
+                     <b>What Technology are aou intrested in?</b> <br>
+                     <input type="checkbox">Java
+                     <input type="checkbox">Jsp
+                     <input type="checkbox">Structs 1.1<br>
+                     <input type="checkbox">Ajax
+                     <input type="checkbox">Structs 2.0
+                     <input type="checkbox">Servlets
+                </td>
+             </tr>
+             <tr>
+                <td colspan="2">
+                    <b>Would you like to receive E-mail notifications on our special sales?</b><br>
+                    <input type="radio">Yes
+                    <input type="radio">No
+                </td>
+             </tr>
+             <tr>
+                <td colspan="2" class="center">
+                    <button>Submit</button>
+                    <button>Reset</button>
+                </td>
+             </tr>
+            </table>
+        </div>
+    </body>
+</html>

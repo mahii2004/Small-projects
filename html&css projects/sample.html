@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #newid {
+          white-space: pre-wrap;
+          
+        }
+      </style>
+</head>
+<body>
+    
+    <h4>Assignment-1</h4>
+    <p id="demo"></p>
+    <h4>Assignment-2</h4>
+    <p id="demo2"></p>
+    <h4>Assignment-3</h4>
+    <p id="demo3"></p>
+    <h4>Assignment-4</h4>
+    <p id="demo4"></p>
+    <form name="myform">
+        <h4>Assignment-5</h4>
+        <table>
+        <tr>
+           <td>
+             <label>enter the minimum value for odd numbers :</label>
+           </td>
+           <td>
+            <input type="text" name="fname" >
+           </td>
+        </tr>
+        <tr>
+          <td>
+            <label> enter the maximum value for odd numbers :</label>
+          </td> 
+          <td>
+            <input type="text" name="fname2" >
+          </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 
+                <button type="button" onclick="myFunction()">Submit </button>
+            </td>
+        </tr>
+        </table>
+        <p id="inform"></p>
+
+        <h4>Assignment-6</h4>
+        <table>
+        <tr>
+           <td>
+             <label>enter the minimum value for even numbers :</label>
+           </td>
+           <td>
+            <input type="text" name="fname3" >
+           </td>
+        </tr>
+        <tr>
+          <td>
+            <label> enter the maximum value for even numbers :</label>
+          </td> 
+          <td>
+            <input type="text" name="fname4" >
+          </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 
+                <button type="button" onclick="myFunction2()">Submit </button>
+            </td>
+        </tr>
+        
+        </table>
+        <p id="inform2"></p>
+
+        
+        <h4>Assignment-7</h4>
+        <table>
+        <tr>
+           <td>
+             <label>enter the number for table :</label>
+           </td>
+           <td>
+            <input type="text" name="fname5" >
+           </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 
+                <button type="button" onclick="myFunction3()">Submit </button>
+            </td>
+        </tr>
+        
+     </table>
+        <p id="inform3"></p>
+    </form>
+
+    <h4>Assignment-8</h4>
+    <p id="outform"></p>
+    
+    <h4>Assignment-9</h4>
+    <p id="outform1"></p>
+    <h4>Assignment-10</h4>
+    <p id="outform2"></p>
+    <h4>Assignment-11</h4>
+    <p id="outform3"></p>
+    <h4>Assignment-12</h4>
+    <p id="outform4"></p>
+ <div id="newid">
+    <h4>Assignment-13</h4>
+    <p id="outform5"></p>
+    <h4>Assignment-14</h4>
+    <p id="outform6"></p>
+    <h4>Assignment-15</h4>
+    <p id="outform7"></p>
+</div>
+ <input type="text" value="value1" id="input1" class="input1">
+ <input type="text" value="value2" id="input1" class="input1">
+    <script>
+      
+//Assignment 1
+let text = " " ;
+ for(let i=0;i<=100;i++)
+{
+   text += i + " " ; 
+ 
+     
+}
+document.getElementById("demo").innerHTML= text;
+ 
+
+//Assignment 2
+let text2 = " " ;
+for(let i=100;i>=0;i--)
+{
+    text2 += i + " " ; 
+    
+}
+document.getElementById("demo2").innerHTML= text2;
+
+
+//Assignment 3
+
+let text3 = " " ;
+for(let i=0;i<=100;i++)
+{
+    if(i%2!=0)
+    {
+        text3 += i + " " ;  
+    }
+}
+
+document.getElementById("demo3").innerHTML= text3;
+
+
+//Assignment 4
+
+let text4 = " " ;
+for(let i=0;i<=100;i++)
+{
+    if(i%2==0)
+    {
+        text4 += i + " " ;     
+
+    }
+     
+}
+
+document.getElementById("demo4").innerHTML= text4;
+
+//Assignment 5
+function myFunction()
+{
+    let n = document.forms["myform"]["fname"].value;
+    let m = document.forms["myform"]["fname2"].value;
+    let tox = " ";
+    for(let i=n;i<=m;i++)
+    {
+        if(i%2!=0)
+        {
+            tox += i + "  " ;
+
+        }
+    }
+    document.getElementById("inform").innerHTML= `The odd numbers between ${n} and ${m} are :  ` + tox; 
+}
+
+//Assignment 6
+function myFunction2()
+{
+    let A = document.forms["myform"]["fname3"].value;
+    let B = document.forms["myform"]["fname4"].value;
+    let tox = " ";
+    for(let i=A;i<=B;i++)
+    {
+        if(i%2==0)
+        {
+            tox += i + "  " ;
+    
+        }
+    }
+
+    document.getElementById("inform2").innerHTML= `The even numbers between ${A} and ${B} are :  ` + tox; 
+}
+
+//Assignment 7
+function myFunction3()
+{
+  let y = document.forms["myform"]["fname5"].value;
+  let tox = " ";
+  for(let i=1;i<=10;i++)
+  {
+    tox +=  y + " x " + i + " = "+ i*y + "<br>";
+    
+  }
+  document.getElementById("inform3").innerHTML = tox ;
+ 
+}
+
+
+//Assignment 8
+let y = " ";
+
+for(let x=1;x<=4;x++)
+{
+   
+
+    for(let i=1;i<=x;i++)
+    {
+        
+        y += i + " "   ;
+     
+    }
+   
+     y += "<br>";
+   
+}
+document.getElementById("outform").innerHTML = y;
+
+//Assignment 9
+let m = " ";
+for(let x=1;x<=4;x++)
+{
+   
+    for(let i=1;i<=x;i++)
+    {
+        m = m + x + " " ;
+    }
+    m += "<br>";
+    
+}
+document.getElementById("outform1").innerHTML = m;
+
+
+//Assignment 10
+let n = " ";
+for(let x=1;x<=4;x++)
+{
+  
+    for(let i=1;i<=x;i++)
+    {
+        n =n + "*" + " " ;
+    }
+    n += "<br>";
+    
+}
+document.getElementById("outform2").innerHTML = n;
+//Assignment 11
+let l = " ";
+for(let x=1;x<=4;x++)
+{
+  
+    for(let i=4;i>=x;i--)
+    {
+        l =l + "*" + " " ;
+    }
+    l += "<br>";
+    
+}
+document.getElementById("outform3").innerHTML = l;
+
+
+//Assignment 12
+let k = " ";
+for(let x=1;x<=4;x++)
+{
+  
+    for(let i=1;i<=x;i++)
+    {
+        k =k + "*" + " " ;
+    }
+    k += "<br>";
+    
+}
+for(let x=1;x<=4;x++)
+{
+  
+    for(let i=3;i>=x;i--)
+    {
+        k =k + "*" + " " ;
+    }
+    k += "<br>";
+    
+}
+document.getElementById("outform4").innerHTML = k;
+
+//Assignment 13
+let s = "";
+for(let i=1;i<=4;i++)
+{
+    
+    for(let j =1; j<=4-i ;j++)
+    {
+         s += "  ";
+    }
+    
+    for(let k=1;k<=i;k++)
+    {
+       s  += " * ";
+       if(k<i)
+       {
+         s += " ";
+       }
+    
+    }
+    s += "<br>";
+   
+}
+document.getElementById("outform5").innerHTML = s;
+
+
+
+//Assignment 14
+
+let f = " ";
+for(let i=4;i>=1;i--)
+{
+    
+    for(let j =1; j<= 4-i ;j++)
+    {
+         f += "  ";
+    }
+    
+    for(let k=1;k<=i;k++)
+    {
+       f  += " * ";
+       if(k<i)
+       {
+         f += " ";
+       }
+    
+    }
+    f += "<br>";
+   
+}
+document.getElementById("outform6").innerHTML = f;
+//Assignment 15
+
+let h = "";
+for(let i=1;i<=4;i++)
+{
+    
+    for(let j =1; j<=4-i ;j++)
+    {
+         h += "  ";
+    }
+    
+    for(let k=1;k<=i;k++)
+    {
+       h  += " * ";
+       if(k<i)
+       {
+         h += " ";
+       }
+    
+    }
+    h += "<br>";
+   
+}
+
+
+
+for(let i=4;i>=1;i--)
+{
+    
+    for(let j =1; j<= 4-i ;j++)
+    {
+         h += "  ";
+    }
+    
+    for(let k=1;k<=i;k++)
+    {
+       h  += " * ";
+       if(k<i)
+       {
+         h += " ";
+       }
+    
+    }
+    h += "<br>";
+   
+}
+document.getElementById("outform7").innerHTML = h;
+
+
+let x = document.getElementsByClassName("input1")[1].value;
+console.log(x);
+
+const a = [10,26,35,98,89];
+console.log(a[3]);
+    </script>
+</body>
+</html>
