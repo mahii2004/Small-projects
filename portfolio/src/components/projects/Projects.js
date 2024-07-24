@@ -18,7 +18,7 @@ const Projects = () => {
           <a href="https://www.linkedin.com/in/mahendra-dadibathina-0417751b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
             Linkedin
           </a>{" "} 
-          <a href="https://github.com/mahendra4204">GitHub</a>
+          <a href="https://github.com/mahii2004">GitHub</a>
         </div>
 
         <div className="skillBars">
